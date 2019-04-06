@@ -9,12 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var textFieldWeight: UITextField!
+    @IBOutlet weak var textFieldHeight: UITextField!
+    @IBOutlet weak var labelResult: UILabel!
+    @IBOutlet weak var imageViewResult: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func actionCalculateImc(_ sender: Any) {
+    }
 }
 
