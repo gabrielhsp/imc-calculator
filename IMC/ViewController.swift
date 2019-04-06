@@ -15,16 +15,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageViewResult: UIImageView!
     @IBOutlet weak var uiViewResult: UIView!
     
-    var imc: Double = 0
+    var imc = Double()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    // This method removes the keyboard when the user touchs inside any part that isn't an entrancy of data
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
 
+    // The method that calculates the IMC needs to convert the values inserted inside each textField to Double
+    // By default, they come as String, so we try to make the conversion and in case of success, we calculate the imc and invoke the showResults method
     @IBAction func actionCalculateImc(_ sender: Any) {
         if let weight = Double(textFieldWeight.text!), let height = Double(textFieldHeight.text!) {
             imc = weight / (height * height)
@@ -32,6 +35,7 @@ class ViewController: UIViewController {
         }
     }
     
+    // This method what's the IMC based on users weight and height and show a text and image to him
     func showResults() {
         var result = String()
         var image = String()
